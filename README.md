@@ -1,4 +1,5 @@
 # ML project with Docker
+
 This project helps as a baseline for building a general Machine Learning Project that uses Docker. It can be integrated with the DevContainers extension in VS Code. The project implements:
 
 1) **Docker integration:** Implements a simple devcontainer folder that can be used to build a Docker image using the DevContainers extension from VS Code. It also implements a basic Dockerfile that allows for installing a basic Python version, installing all dependencies in a requirements.txt file in the same folder.
