@@ -7,8 +7,11 @@ WORKDIR /workspace
 # Copy requirements.txt to the docker container
 COPY requirements.txt ./requirements.txt
 
-# Update pip
-RUN pip3 install --upgrade pip
+# Set pip default timeout (seconds)
+ENV PIP_DEFAULT_TIMEOUT=300
+
+# Update pip and install git
+RUN apt-get update && apt-get install -y build-essential git
 
 # Install python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
