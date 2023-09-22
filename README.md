@@ -6,6 +6,26 @@ This project helps as a baseline for building a general Machine Learning Project
 2) **Pre-Commits:** Implements a general pre-commit structure to get instant webhooks using a few libraries that I consider essential: *black*, *isort*, *bandit* and *interrogate*. More can be added using the pre-commit yaml file in the main directory.
 3) **.gitignore:** Uses a base .gitignore with things that you generally don't want to publish to a github repository, so that I don't forget to implement them.
 
+## Before you start:
+
+The project uses a few libraries that you need to install before you start using it. You can install them using the following command:
+
+```bash
+pip install -r isort black bandit
+```
+
+Or: 
+
+```bash
+conda install -c conda-forge isort black bandit
+```
+
+The base pre-commit file assumes your local environment has the libraries installed. If you want to use the pre-commit hooks from inside a Docker environment, you need to install them in the Dockerfile. You can do that by adding the following lines to the Dockerfile:
+
+```Dockerfile
+RUN pip install -r isort black bandit
+```
+
 # Documentation Template:
 
 ## Problem

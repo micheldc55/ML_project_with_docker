@@ -20,6 +20,17 @@ COPY requirements.txt ./requirements.txt
 # Update pip and install git
 RUN apt-get update && apt-get install -y build-essential git
 
+## PRE-COMMITS ##
+
+# Install pre-commit hooks
+RUN pip3 install pre-commit
+RUN pre-commit install
+
+# Install required libraries for pre-commit hooks
+RUN pip3 install isort black bandit
+
+##################
+
 # Install python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
