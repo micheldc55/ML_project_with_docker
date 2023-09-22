@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install -y build-essential git
 
 # Install pre-commit hooks
 RUN pip3 install pre-commit
-RUN pre-commit install
+# RUN pre-commit install
 
 # Install required libraries for pre-commit hooks
 RUN pip3 install isort black bandit
@@ -35,7 +35,7 @@ RUN pip3 install isort black bandit
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Expose port 
-EXPOSE 8501
+EXPOSE 8502
 
 # Run the command to start the app
 # CMD ["streamlit", "run", "app.py"]
