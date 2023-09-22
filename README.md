@@ -16,7 +16,7 @@ This project helps as a baseline for building a general Machine Learning Project
 5) Which parts of the system will use predictions? Which decisions/actions are possible based on the model’s predictions? Which user journey(s) include using the model, and what impact does it have?
 6) What input must the model accept, and what output does it have to produce?
 
-## Metrics
+## Metrics
 
 1) Which metric(s) will be used to measure the model’s performance?
 2) What is/are the minimal value(s) of metrics for running the model in production?
@@ -24,7 +24,7 @@ This project helps as a baseline for building a general Machine Learning Project
 4) What is the performance of the current solution?
 5) Is there a way to estimate the value added by machine learning by using historical data?
 
-## Dataset
+## Dataset
 
 1) Any selection bias during data collection ? 
 2) Are there missing values? If so:
