@@ -9,16 +9,22 @@ ADD zscaler.pem /usr/local/share/ca-certificates/zscaler.pem
 
 # Update certificate store
 RUN chmod 644 /usr/local/share/ca-certificates/zscaler.pem && update-ca-certificates
+
+# Environment variable for Git and Requests to use CA certificate
+ENV GIT_SSL_CAINFO=/usr/local/share/ca-certificates/zscaler.pem
 ENV REQUESTS_CA_BUNDLE=/usr/local/share/ca-certificates/zscaler.pem
+
+# Update and install essential packages
+RUN apt-get update && apt-get install -y build-essential git ca-certificates
+
+# Add our company's certificate to the docker container instance certificates
+ADD zscaler.pem /usr/local/share/ca-certificates/zscaler.pem
 
 # Set pip default timeout (seconds)
 ENV PIP_DEFAULT_TIMEOUT=300
 
 # Copy requirements.txt to the docker container
 COPY requirements.txt ./requirements.txt
-
-# Update pip and install git
-RUN apt-get update && apt-get install -y build-essential git
 
 ## PRE-COMMITS ##
 
