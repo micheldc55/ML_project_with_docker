@@ -12,6 +12,6 @@ repos:
     hooks:
     -   id: bandit
 -   repo: https://github.com/econchick/interrogate
-    rev: 2.4.0
+    rev: 2.3.1
     hooks:
-    -   id: interrogate
+    -   id: interrogatepre-commit --version
